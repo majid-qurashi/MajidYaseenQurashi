@@ -39,51 +39,51 @@ function scrollHeader() {
 window.addEventListener("scroll", scrollHeader);
 
 /*==========scroll active link===========*/
-const sections = document.querySelectorAll("section[id]")
-window.addEventListener("scroll", navHighlighter)
-function navHighlighter(){
-    let scrollY = window.pageYOffset;
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 58;
-        const sectionId = current.getAttribute("id");
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
-        {
-            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add("active-link")
-        }
-            else{
-                document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove("active-link")  
-            }
-        
-    })
+const sections = document.querySelectorAll("section[id]");
+window.addEventListener("scroll", navHighlighter);
+function navHighlighter() {
+  let scrollY = window.pageYOffset;
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 58;
+    const sectionId = current.getAttribute("id");
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
+    } else {
+      document
+        .querySelector(".nav-menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
+    }
+  });
 }
 
 /*==========portfolio item filter===========*/
 const filterContainer = document.querySelector(".portfolio-filter-inner"),
-filterBtns = filterContainer.children,
-totalFilterBtn = filterBtns.length,
-portfolioItems = document.querySelectorAll(".portfolio-item"),
-totalPortfolioItem = portfolioItems.length;
-for(let i=0; i<totalFilterBtn; i++){
-    filterBtns[i].addEventListener("click", function(){
-        filterContainer.querySelector(".active").classList.remove("active");
-this.classList.add("active");
-const filterValue = this.getAttribute("data-filter")
-for(let k=0; k<totalPortfolioItem; k++){
-    if(filterValue === portfolioItems[k].getAttribute("data-category")){
+  filterBtns = filterContainer.children,
+  totalFilterBtn = filterBtns.length,
+  portfolioItems = document.querySelectorAll(".portfolio-item"),
+  totalPortfolioItem = portfolioItems.length;
+for (let i = 0; i < totalFilterBtn; i++) {
+  filterBtns[i].addEventListener("click", function () {
+    filterContainer.querySelector(".active").classList.remove("active");
+    this.classList.add("active");
+    const filterValue = this.getAttribute("data-filter");
+    for (let k = 0; k < totalPortfolioItem; k++) {
+      if (filterValue === portfolioItems[k].getAttribute("data-category")) {
         portfolioItems[k].classList.remove("hide");
         portfolioItems[k].classList.add("show");
-    }
-    else{
+      } else {
         portfolioItems[k].classList.add("hide");
         portfolioItems[k].classList.remove("show");
-    }
-    if(filterValue === "all") {
+      }
+      if (filterValue === "all") {
         portfolioItems[k].classList.remove("hide");
         portfolioItems[k].classList.add("show");
+      }
     }
-}
-    })
+  });
 }
 /*==========Theme display customization===========*/
 const theme = document.querySelector("#theme-button");
@@ -152,10 +152,10 @@ let whiteColorLightness;
 
 // change bg
 const changeBG = () => {
-    root.style.setProperty('--light-color-lightness', lightColorLightness);
-    root.style.setProperty('--white-color-lightness', whiteColorLightness);
-    root.style.setProperty('--dark-color-lightness', darkColorLightness);
-}
+  root.style.setProperty("--light-color-lightness", lightColorLightness);
+  root.style.setProperty("--white-color-lightness", whiteColorLightness);
+  root.style.setProperty("--dark-color-lightness", darkColorLightness);
+};
 Bg1.addEventListener("click", () => {
   //add active class
   Bg1.classList.add("active");
@@ -170,22 +170,27 @@ Bg2.addEventListener("click", () => {
   whiteColorLightness = "20%";
   lightColorLightness = "15%";
 
- //add active class
- Bg2.classList.add("active");
- // remove active class
- Bg1.classList.remove("active");
- Bg3.classList.remove("active");
- changeBG();
+  //add active class
+  Bg2.classList.add("active");
+  // remove active class
+  Bg1.classList.remove("active");
+  Bg3.classList.remove("active");
+  changeBG();
 });
 Bg3.addEventListener("click", () => {
-    darkColorLightness = "95%";
-    whiteColorLightness = "10%";
-    lightColorLightness = "0%";
+  darkColorLightness = "95%";
+  whiteColorLightness = "10%";
+  lightColorLightness = "0%";
 
-     //add active class
- Bg3.classList.add("active");
- // remove active class
- Bg2.classList.remove("active");
- Bg1.classList.remove("active");
- changeBG();
+  //add active class
+  Bg3.classList.add("active");
+  // remove active class
+  Bg2.classList.remove("active");
+  Bg1.classList.remove("active");
+  changeBG();
 });
+
+// == Date ==
+const dateSpan = document.querySelector("#date");
+const thisYear = new Date().getFullYear();
+dateSpan.innerHTML = thisYear
