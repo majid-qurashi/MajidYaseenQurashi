@@ -3,10 +3,10 @@
 :root {
   --header-height: 3.5;
   /* ==============COLOURS=============== */
-  --primary-color-hue:352;
-  --dark-color-lightness:17%;
-  --light-color-lightness:92%;
-  --white-color-lightness:100%;
+  --primary-color-hue: 352;
+  --dark-color-lightness: 17%;
+  --light-color-lightness: 92%;
+  --white-color-lightness: 100%;
 
   --color-white: hsl(252, 30%, var(--white-color-lightness));
   --color-light: hsl(252, 30%, var(--light-color-lightness));
@@ -43,17 +43,16 @@
   /* ==============BOX SHADOW============ */
   --box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
 }
-  /* ==============scroll bar============ */
-::-webkit-scrollbar{
+/* ==============scroll bar============ */
+::-webkit-scrollbar {
   width: 0.6rem;
   background: var(--color-white);
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: var(--color-primary);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-  
+
 /* ==============RESPONSIVE TYPOGRAPHY============ */
 @media screen and (max-width: 992px) {
   :root {
@@ -133,7 +132,7 @@ h3 {
 
 /* ========REUSABLE CSS CLASSES========== */
 .section .container {
-  padding-top: 3.90rem;
+  padding-top: 3.9rem;
   padding-bottom: 4.75rem;
 }
 
@@ -284,7 +283,7 @@ h3 {
   background-color: var(--color-primary);
   border-radius: 50%;
 }
-.scroll-header{
+.scroll-header {
   box-shadow: 0 1px 4px rgba(165, 125, 125, 0.02);
 }
 /* ==============Home=============== */
@@ -627,7 +626,7 @@ h3 {
 .price-item .badge {
   position: absolute;
   left: 0;
-  top: 2.75rem;
+  top: 2.67rem;
   color: #fff;
   background-color: var(--color-primary);
   transform: rotate(-90deg);
@@ -679,19 +678,19 @@ h3 {
   max-width: 33.33%;
   margin-bottom: var(--m-1-5);
 }
-.portfolio-item.hide{
+.portfolio-item.hide {
   display: none;
 }
-.portfolio-item.show{
+.portfolio-item.show {
   display: block;
   animation: showItem 0.5s ease;
 }
-@keyframes showItem{
-  0%{
-    transform:  scale(0.6);
+@keyframes showItem {
+  0% {
+    transform: scale(0.6);
     opacity: 0;
   }
-  100%{
+  100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -978,7 +977,7 @@ h3 {
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
-  color: #fff;
+  color: var(--color-dark);
   outline: none;
   border: none;
   z-index: 1;
@@ -989,6 +988,7 @@ h3 {
   top: 0.4rem;
   width: 100%;
   font-size: var(--small-font-size);
+  color: var(--color-primary);
   transition: 0.3s;
 }
 

@@ -195,23 +195,30 @@ const dateSpan = document.querySelector("#date");
 const thisYear = new Date().getFullYear();
 dateSpan.innerHTML = thisYear;
 //
-const btn = document.getElementById('button');
+const btn = document.getElementById("button");
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-   btn.value = 'Sending...';
+  btn.value = "Sending...";
 
-   const serviceID = 'default_service';
-   const templateID = 'template_h9wpiel';
+  const serviceID = "default_service";
+  const templateID = "template_h9wpiel";
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
+  emailjs.sendForm(serviceID, templateID, this).then(
+    () => {
+      btn.value = "Send Email";
+      alert("Sent!");
+    },
+    (err) => {
+      btn.value = "Send Email";
       alert(JSON.stringify(err));
-    });
+    }
+  );
 });
+
+// CONTACT FEILDS
+function contactInput(){
+const message = document.getElementById("message").value.length;
+console.log(message)
+}
