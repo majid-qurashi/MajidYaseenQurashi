@@ -1000,7 +1000,8 @@ h3 {
   resize: none;
 }
 
-.contact-input:focus + .contact-label {
+.contact-input:focus + .contact-label,
+.contact-input:not(:placeholder-shown) + .contact-label {
   top: -0.75rem;
   left: 0;
   z-index: 10;
